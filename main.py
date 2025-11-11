@@ -1,4 +1,4 @@
-from .fuctions.streamings import login, listen
+from fuctions.streamings import login, listen
 
 def main():
     client = login()

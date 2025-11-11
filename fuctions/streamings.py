@@ -1,6 +1,6 @@
 from mastodon import Mastodon, StreamListener
 from mastodon.return_types import Notification
-from ..utils.load_env import INSTANCE_URL, ACCESS_TOKEN, DEV
+from utils.load_env import INSTANCE_URL, ACCESS_TOKEN, DEV
 
 class Bot(StreamListener):
     effective_notification_types = (
