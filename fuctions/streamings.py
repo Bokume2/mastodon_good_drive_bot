@@ -18,7 +18,7 @@ class Bot(StreamListener):
         
 def login() -> Mastodon:
     client = Mastodon(
-        client_secret = ACCESS_TOKEN,
+        access_token = ACCESS_TOKEN,
         api_base_url = INSTANCE_URL
     )
     if DEV == "true":
