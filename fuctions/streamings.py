@@ -1,14 +1,19 @@
 from mastodon import Mastodon, StreamListener
-from mastodon.return_types import Status
+from mastodon.return_types import Notification
 from ..utils.load_env import INSTANCE_URL, ACCESS_TOKEN, DEV
 
 class Bot(StreamListener):
+    effective_notification_types = (
+        "mention",
+        "follow"
+    )
+
     def __init__(self, client: Mastodon):
         super().__init__()
         self.client = client
 
-    def on_update(self, status: Status):
-        if status.account.bot or status.reblog is not None:
+    def on_notification(self, notification: Notification):
+        if notification.account.bot or notification.type not in self.effective_notification_types:
             return
         
 def login() -> Mastodon:
