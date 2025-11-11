@@ -1,0 +1,11 @@
+[project]
+name = "good-drive-bot"
+version = "0.1.0"
+description = "安全運転を祈願するMastodon Bot"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "beautifulsoup4>=4.14.2",
+    "dotenv>=0.9.9",
+    "mastodon-py>=2.1.4",
+]
