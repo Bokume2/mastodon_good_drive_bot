@@ -1,0 +1,2 @@
+# mastodon_good_drive_bot
+交通安全を祈願するMastodon Botです
