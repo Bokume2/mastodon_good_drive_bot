@@ -1,5 +1,7 @@
 from mastodon import Mastodon, StreamListener
 from mastodon.return_types import Notification, Status
+from datetime import datetime, timezone, timedelta
+import time
 from utils.load_env import INSTANCE_URL, ACCESS_TOKEN, DEV
 from .functions import yell
 
@@ -37,4 +39,10 @@ def login() -> Mastodon:
     return client
 
 def listen(client: Mastodon):
-    client.stream_user(Bot(client))
+    while True:
+        try:
+            client.stream_user(Bot(client))
+        except Exception as e:
+            print(datetime.now(timezone(timedelta(hours=9))))
+            print(e)
+            time.sleep(30)
