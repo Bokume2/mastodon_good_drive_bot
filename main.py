@@ -1,9 +1,9 @@
+from threading import Thread
 from fuctions.streamings import login, listen
 
 def main():
     client = login()
-    listen(client)
-
+    Thread(target = listen, args = (client,)).start()
 
 if __name__ == "__main__":
     main()
