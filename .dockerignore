@@ -1,2 +1,5 @@
 .venv/
 settings/.env
+.git/
+.gitignore
+.vscode/
