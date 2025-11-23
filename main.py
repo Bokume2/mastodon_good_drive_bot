@@ -1,5 +1,5 @@
 from threading import Thread
-from fuctions.streamings import login, listen
+from functions.streamings import login, listen
 
 def main():
     client = login()
