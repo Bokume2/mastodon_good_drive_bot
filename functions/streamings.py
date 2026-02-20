@@ -2,7 +2,7 @@ from mastodon import Mastodon, StreamListener
 from mastodon.return_types import Notification, Status
 from datetime import datetime, timezone, timedelta
 import time
-from utils.load_env import INSTANCE_URL, ACCESS_TOKEN, DEV
+from utils.load_env import INSTANCE_URL, ACCESS_TOKEN
 from .functions import yell
 
 class Bot(StreamListener):
@@ -34,8 +34,6 @@ def login() -> Mastodon:
         access_token = ACCESS_TOKEN,
         api_base_url = INSTANCE_URL
     )
-    if DEV == "true":
-        client.session.verify = False
     return client
 
 def listen(client: Mastodon):
