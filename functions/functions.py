@@ -30,3 +30,6 @@ def yell(client: Mastodon, status: Status):
     yell_voice = random.choice(actual_yell_voices)
     reply_content = f"\n\n{uuid_value}\n\n{yell_voice}"
     client.status_reply(status, reply_content)
+    print()
+    print(f"Replied to: {status.account.username}")
+    print(content)

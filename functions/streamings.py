@@ -37,10 +37,12 @@ def login() -> Mastodon:
     return client
 
 def listen(client: Mastodon):
+    print("Starting to listen the timeline...")
     while True:
         try:
             client.stream_user(Bot(client))
         except Exception as e:
+            print()
             print(datetime.now(timezone(timedelta(hours=9))))
             print(e)
             time.sleep(30)
