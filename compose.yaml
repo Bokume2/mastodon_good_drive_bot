@@ -4,3 +4,4 @@ services:
     command: ["uv", "run", "main.py"]
     volumes:
       - .:/bot
+    restart: unless-stopped
